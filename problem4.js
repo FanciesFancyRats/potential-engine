@@ -1,10 +1,50 @@
-unsolved = false;
-var x = 777;
+unsolved = true;
+var x = 999;
 var y = 999;
+pals = [];
+check = '';
+answer = 0;
 
-while(unsolved){
-	
+while(y > 100){
+	for(x = 999; x > 100; x--){
+		check = String(x * y);
+		check = check.split('');
+		isPal = true;
+			while(isPal){
+				if(check.length === 1){
+					pals.push(x * y);
+					isPal = false;
+				}
+				if(check.length === 2){
+					if(check[0] === check[1]){
+						pals.push(x*y);
+						isPal = false;
+					}		
+					else{
+						isPal = false;	
+					}
+				}
+				else{
+					if(check[0] === check[check.length - 1]){
+						check.splice(0, 1);
+						check.splice((check.length - 1), 1);
+					}
+					else{
+						isPal = false;	
+					}
+				}
+			}
+	} 
+	y -= 1;
+
 }
+for(i = 0; i < pals.length; i++){
+	if(pals[i] > answer){
+		answer = pals[i];	
+	}
+}
+console.log(answer);
+/*
 function isPal(number){
 	console.log(number);
 	var check = String(number);
@@ -42,4 +82,4 @@ if(isPal(x)){
 else{
 	console.log('is not pal');
 }
-
+*/
