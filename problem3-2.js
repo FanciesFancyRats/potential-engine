@@ -1,15 +1,22 @@
 var factors = [];
 var factor = 2;
 var number = 600851475143;
+var primes = 0;
+var x = 2;
 
-while(number > 1){
-	if((number % factor) == (0)){
-		factors.push(factor);
-		number = number/factor;
-		factor = 2;
+function isPrime(n){
+
+	for(i=(n-1); i > 1; i--){
+		if(n%i===0){
+			return false;	
+		}
 	}
-	else{
-		factor += 1	
+	return true;
+} 
+
+for(i = 3; i < 13; i++){
+	console.log(i);
+	a = isPrime(i);
+	//console.log(a);
 	}
-}
-console.log(factors);
+//10 00`1
