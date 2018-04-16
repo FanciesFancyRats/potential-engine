@@ -1,16 +1,24 @@
-var factors = [];
-var factor = 2;
-var number = 600851475143;
-var primes = 0;
-var x = 2;
+var isPrime = true;
+var primes = [2];
+var x = 3;
+var sum = 0;
 
-while(primes <  6){
-	for(i = x; i > 1; i--){
-		if(x%i === 0){
-			primes += 1;
-			break;	
-		}	
-	} 
-	x+=1;
+while (x < 2000000){
+	isPrime = true;
+	for(i = (x-1); i > 1; i--){
+		if(x%i == 0){
+		isPrime = false;	
+		}
+	}	
+	if(isPrime){
+
+		primes.push(x);	
+		console.log(x);
+		sum += x;
+
+	}
+	x += 1;
 }
-console.log(x);
+console.log(primes[(primes.length - 1)]);
+console.log(sum);
+//104743
