@@ -93,5 +93,5 @@ for(i = 0; i < line20.length; i++){
 }
 
 
-console.log('expect 49' ,grid[1][1]);
+console.log('expect 49' ,grid[19][19]);
 
