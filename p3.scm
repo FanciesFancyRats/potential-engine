@@ -23,13 +23,14 @@
   (lambda (n limit notPrimes primes)
     (cond
 	((> n limit) primes)
+	((= n 2) (sieve-iter (+ n 1) limit (add-until n n limit notPrimes) (cons n primes)))
 	;((and (= (modulo n 2) 0) (> n 2)) (sieve (+ n 1) limit notPrimes primes))
 	((member n notPrimes) (sieve-iter (+ n 1) limit notPrimes primes))
-	(else (sieve-iter (+ n 1) limit (add-until n n limit notPrimes) (cons n primes))))))
+	(else (sieve-iter (+ n 2) limit (add-until n n limit notPrimes) (cons n primes))))))
 
 (define sieve
   (lambda (limit)
-    (sieve-iter 2 limit () ())))
+    (sieve-iter 2 limit '() '())))
 
 ;(define is-multiple
 ;  (lambda (n listn)
