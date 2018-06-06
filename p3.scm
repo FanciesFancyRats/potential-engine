@@ -50,7 +50,7 @@
       ((> n limit) (car alist))
       (else (iter-list (+ n 1) limit (cdr alist))))))
 
-(define testList '(e f g h))
+(define testList '(1 2 3 4 5))
 
 (define (combinations size set)
   (cond ((= size 0) '(()))
@@ -62,3 +62,13 @@
 
 (define (prepend-every item lst)
    (map (lambda (choice) (se item choice)) lst))
+
+(define (add-to-nth-iter toAdd nth lista listb x)
+    (cond
+      (= x 0 (cons lista (cons (+ toAdd (car listb))(cdr listb))))
+      (else add-to-nth-iter toAdd nth (cons (car lista) lista) (cdr listb) (- x 1))))
+
+(define (sqr)
+  (lambda (x)
+    (* x x)))
+
