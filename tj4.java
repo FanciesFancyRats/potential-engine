@@ -22,3 +22,4 @@ public class tj4 {
 		System.out.println(".");	
 	}
 }
+//This is a small comment
