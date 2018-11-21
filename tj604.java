@@ -5,8 +5,9 @@ public class tj604{
 		Scanner in = new Scanner(System.in);
 		pi = Math.sin(3.14159);
 		System.out.println(multadd(1.0, 2.0, 3.0));
-		System.out.println(multadd((Math.cos(3.14159/4)), (1/2), (Math.sin(3.14159/4))));
-		n = in.nextInt();	
+		System.out.println(multadd((Math.cos(Math.PI/4)), (1/2), (Math.sin(Math.PI/4))));
+		n = in.nextInt();
+		System.out.println(expSum(n));
 
 
 	}
@@ -14,6 +15,6 @@ public class tj604{
 		return(a * b + c);			
 	}
 	public static double expSum(double n){
-		return(multadd(n, Math.E, Math.PI));	
+		return(multadd(n, Math.pow(Math.E, (-n)), Math.sqrt((1 - Math.pow(Math.E, (- n))))));	
 	}
 }
