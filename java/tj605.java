@@ -15,10 +15,10 @@ public class tj605{
 	public static boolean isHoopy(int x) {
 		boolean hoopyFlag;
 		if (x % 2 == 0){
-			hoopyFlag == true;	
+			hoopyFlag = true;	
 		}	
 		else{
-			hoopyFlag == false;	
+			hoopyFlag = false;	
 		}
 		return hoopyFlag;
 	}
