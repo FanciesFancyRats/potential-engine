@@ -42,7 +42,7 @@ for(i = 0; i < arr.length; i++){
 		}
 	}
 }
-console.log(product);
+console.log(answer);
 //Vertically...
 for(i = 0; i < arr.length - 4; i++){
 	for(j = 0; j < arr[i].length; j++){
@@ -55,4 +55,30 @@ for(i = 0; i < arr.length - 4; i++){
 		}
 	}
 }
-console.log(product);
+console.log(answer);
+//Diagonally ++
+for(i = 0; i < arr.length - 4; i++){
+	for(j = 0; j < arr[i].length - 4; j++){
+		product = 1;
+		for(k = 0; k < 4; k++){
+			product *= arr[i + k][j + k];	
+		}
+		if(product > answer){
+			answer = product;	
+		}
+	}
+}
+console.log(answer);
+//Diagonally --
+for(i = 0; i < arr.length - 4; i++){
+	for(j = 4; j < arr[i].length; j++){
+		product = 1;
+		for(k = 0; k < 4; k++){
+			product	*= arr[i + k][j - k];
+		}	
+		if(product > answer){
+			answer = product;	
+		}
+	}
+}
+console.log(answer);
