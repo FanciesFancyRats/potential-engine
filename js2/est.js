@@ -7,6 +7,9 @@ function genTriNum(n){
 }
 
 function countDiv(n){
+	if((n % 2 !== 0)||(n % 3 !== 0)||(n % 5 !== 0)){
+	return(1);	
+	}
 	count = 0;
 	for(i = n; i > 0; i--){
 		if(n % i === 0){
@@ -28,6 +31,8 @@ function problem(n){
 		problem(n);
 	}
 }
-//console.log(problem(3000));
-console.log(countDiv(genTriNum(6230)));
+console.log(problem(4400));
+console.log(genTriNum(3584));
+console.log(countDiv(genTriNum(3584)));
+
 
