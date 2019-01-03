@@ -28,6 +28,5 @@ function problem(n){
 		problem(n);
 	}
 }
-//console.log(problem(3000));
-console.log(countDiv(genTriNum(6230)));
+console.log(problem(3000));
 
