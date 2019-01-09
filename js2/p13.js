@@ -101,6 +101,22 @@ a[97] = '72107838435069186155435662884062257473692284509516';
 a[98] = '20849603980134001723930671666823555245252804609722';
 a[99] = '53503534226472524250874054075591789781264330331690';
 sum = 0;
+sums = [];
+for(i = 0; i < a.length; i++){
+	a[i] = a[i].split("");
+}
+console.log(a[1][a[1].length - 1]);
+console.log(sum);
+for(j = a[0].length - 1; j >= 0;j--){
+	console.log(j);
+	sum = 0;
+for(i = 0; i < a.length; i++){
+	sum += Number(a[i][j]);
+}
+sums.push([sum, j]);
+}
+console.log(sums);
+
 /*
 for (i = 0; i < a.length; i++){
 	b = a[i] % 10000000000;
@@ -112,7 +128,7 @@ for (i = 0; i < a.length; i++){
 console.log(sum);
 */
 //Need to make the input 10 digits long or js will change it to scientific notation
-
+/*
 for (i = 0; i<a.length; i++){
 	console.log("iteration: ", i);
 	t = a[i];
