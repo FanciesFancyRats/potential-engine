@@ -113,8 +113,14 @@ for(j = a[0].length - 1; j >= 0;j--){
 for(i = 0; i < a.length; i++){
 	sum += Number(a[i][j]);
 }
-sums.push([sum, j]);
+sums.push([sum]);
 }
+for(i = 0; i < sums.length; i++){
+	for(j = 0; j < i; j++){
+		sums[i].push(0);	
+	}
+}
+console.log(a);
 console.log(sums);
 
 /*
