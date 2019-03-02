@@ -7,8 +7,7 @@
 //	b.push([0, 0, 0]);
 //}
 //c//onsole.log(b);
-
-function solve (x, y){
+var solve = memoize(function (x, y){
 	if(x === 1 && y === 1){
 		return(1);	
 	}	
@@ -23,8 +22,10 @@ function solve (x, y){
 			return(solve(x, (y - 1)));	
 		}
 	}
-};
+});
 
+
+/*
 const memoizedAdd = () => {
 	let cache ={};
 	return (n) => {
@@ -75,5 +76,22 @@ console.log(factorial(5, 1));
 console.log(factorial(6, 1));
 //const newAdd = memoizedAdd();
 //console.log(newAdd(9));
-//console.log(newAdd(9));
-//console.log(solve(21, 21));
+//console.log(newAdd(9));*/
+function memoize(fn){
+	var cache = {};
+
+	return function(){
+		var key = arguments.length + Array.prototype.join.call(arguments,",");
+		console.log(key);
+		if(key in cache){ 
+			console.log("fetching from cache");	
+			return cache[key];
+		}
+		else{ 
+			console.log("writing new value to cache");
+			return cache[key] = fn.apply(this, arguments);
+		}
+	};
+}
+
+console.log(solve(21, 21));
